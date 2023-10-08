@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   other.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 19:12:14 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/08 21:11:28 by mmarie           ###   ########.fr       */
+/*   Created: 2023/10/08 23:03:25 by mmarie            #+#    #+#             */
+/*   Updated: 2023/10/08 23:03:48 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void	radix_sort(Node **stack_a, Node **stack_b)
+void	initstack(Node **stack, int argc, char **argv)
 {
-	Node	*head_a;
+	Node	*new;
+	char	**args;
 	int		i;
-	int		j;
-	int		size;
 
 	i = 0;
-	head_a = *stack_a;
-	size = ft_lstsize(head_a);
-	while (view_sort(stack_a) == 0)
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
 	{
-		j = 0;
-		while (j++ < size && view_sort(stack_a) == 0)
-		{
-			head_a = *stack_a;
-			if (((head_a->index >> i) & 1) == 1)
-				ra(stack_a);
-			else
-				pb(stack_a, stack_b);
-		}
-		while (ft_lstsize(*stack_b) != 0)
-			pa(stack_a, stack_b);
+		i = 1;
+		args = argv;
+	}
+	while (args[i])
+	{
+		new = ft_lstnew(ft_atoi(args[i]));
+		ft_lstadd_back(stack, new);
 		i++;
 	}
+	index_stack(stack);
+	if (argc == 2)
+		ft_free(args);
 }

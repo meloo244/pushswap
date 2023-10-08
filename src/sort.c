@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 20:25:04 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/04 20:00:35 by mmarie           ###   ########.fr       */
+/*   Created: 2023/09/07 19:13:04 by mmarie            #+#    #+#             */
+/*   Updated: 2023/10/08 21:11:28 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../includes/push_swap.h"
 
-void	ft_printlist(Node **liste_a)
+void	ft_printlist(Node **stack_a)
 {
 	Node **tmp;
 
-	tmp = liste_a;
+	tmp = stack_a;
 	while (*tmp != NULL)
 	{
 		ft_putnbr_fd((*tmp)->content, 1);
@@ -26,87 +26,87 @@ void	ft_printlist(Node **liste_a)
 	ft_putstr_fd("\n", 1);
 }
 
-void	sort3(Node **liste_a)
+void	sort3(Node **stack_a)
 {
-	while (view_sort(liste_a) == 0)
+	while (view_sort(stack_a) == 0)
 	{
-		if ((*liste_a)->content > (*liste_a)->next->content)
-			sa(liste_a);
-		if ((*liste_a)->next->content > (*liste_a)->next->next->content)
-			rra(liste_a);
+		if ((*stack_a)->content > (*stack_a)->next->content)
+			sa(stack_a);
+		if ((*stack_a)->next->content > (*stack_a)->next->next->content)
+			rra(stack_a);
 	}
 }
 
-void	sort4(Node **liste_a, Node** liste_b)
+void	sort4(Node **stack_a, Node** stack_b)
 {
-	if (view_sort(liste_a) == 1)
+	if (view_sort(stack_a) == 1)
 		return;
-	if ((*liste_a)->index == 1)
-		pb(liste_a, liste_b);
-	else if ((*liste_a)->next->index == 1)
+	if ((*stack_a)->index == 1)
+		pb(stack_a, stack_b);
+	else if ((*stack_a)->next->index == 1)
 	{
-		ra(liste_a);
-		pb(liste_a, liste_b);
+		ra(stack_a);
+		pb(stack_a, stack_b);
 	}
-	else if ((*liste_a)->next->next->index == 1)
+	else if ((*stack_a)->next->next->index == 1)
 	{
-		ra(liste_a);
-		ra(liste_a);
-		pb(liste_a, liste_b);
+		ra(stack_a);
+		ra(stack_a);
+		pb(stack_a, stack_b);
 	}
-	else if ((*liste_a)->next->next->next->index == 1)
+	else if ((*stack_a)->next->next->next->index == 1)
 	{
-		rra(liste_a);
-		pb(liste_a, liste_b);
+		rra(stack_a);
+		pb(stack_a, stack_b);
 	}
-	sort3(liste_a);
-	pa(liste_b, liste_a);
+	sort3(stack_a);
+	pa(stack_b, stack_a);
 }
 
-void	sort5(Node **liste_a, Node **liste_b)
+void	sort5(Node **stack_a, Node **stack_b)
 {
 	int	nbv;
 
 	nbv = 0;
 	while(nbv != 2)
 	{
-		if((*liste_a)->index == 1 || (*liste_a)->index == 2)
+		if((*stack_a)->index == 1 || (*stack_a)->index == 2)
 		{
-			pb(liste_a, liste_b);
+			pb(stack_a, stack_b);
 			nbv++;
 		}
-		(*liste_a) = (*liste_a)->next;
+		(*stack_a) = (*stack_a)->next;
 	}
-	sort3(liste_a);
-	if((*liste_b)->content < (*liste_b)->next->content)
-		swap(liste_b);
-	push(liste_b, liste_a);
-	push(liste_b, liste_a);
+	sort3(stack_a);
+	if((*stack_b)->content < (*stack_b)->next->content)
+		swap(stack_b);
+	push(stack_b, stack_a);
+	push(stack_b, stack_a);
 }
-
-int	view_sort(Node **liste_a)
+/*
+int	view_sort(Node **stack_a)
 {
 	int	i;
 
 	i = 1;
-	while((*liste_a) != NULL)
+	while((*stack_a) != NULL)
 	{
-		if((*liste_a)->index == i) // et = 1
-			*liste_a = (*liste_a)->next;
+		if((*stack_a)->index == i) // et = 1
+			*stack_a = (*stack_a)->next;
 		else
 			return(0);
 		i++;
 	}
 	return(1);
-}
+}*/
 
 /*
-static int	get_min(Node **liste_a, int val)
+static int	get_min(Node **stack_a, int val)
 {
 	Node	*head;
 	int		min;
 
-	head = *liste_a;
+	head = *stack_a;
 	min = head->index;
 	while (head->next)
 	{
@@ -117,12 +117,12 @@ static int	get_min(Node **liste_a, int val)
 	return (min);
 }*/
 
-/*static int	get_max(Node **liste_a, int val)
+/*static int	get_max(Node **stack_a, int val)
 {
 	Node	*head;
 	int		max;
 
-	head = liste_a;
+	head = stack_a;
 	max = head->index;
 	while (head->next)
 	{
@@ -147,4 +147,15 @@ void	simple_sort(Node **stack_a, Node **stack_b)
 		sort3(stack_a);
 	else if (size == 4)
 		sort4(stack_a, stack_b);
+}
+
+int	view_sort(Node **stack_a)
+{
+	while((*stack_a)->next != NULL)
+	{
+		if((*stack_a)->content > (*stack_a)->next->content)
+			return(0);
+		(*stack_a) = (*stack_a)->next;
+	}
+	return(1);
 }

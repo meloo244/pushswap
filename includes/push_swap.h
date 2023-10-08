@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 18:33:22 by shovsepy          #+#    #+#             */
-/*   Updated: 2023/10/04 18:29:42 by mmarie           ###   ########.fr       */
+/*   Created: 2023/10/08 19:21:46 by mmarie            #+#    #+#             */
+/*   Updated: 2023/10/08 22:52:32 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# define NULL __null
+
 //# define INT_MAX 2147483647
 //# define INT_MIN -2147483648
 
@@ -25,6 +25,7 @@
 # include <stdio.h>
 # include <stdbool.h>
 
+/* STRUCTURE */
 typedef struct s_list
 {
 	int				content;
@@ -32,6 +33,7 @@ typedef struct s_list
 	struct s_list	*next;
 }				Node;
 
+/* FUNCTION LISTE CHAINE */
 Node	*ft_lstnew(int content);
 Node	*ft_lstlast(Node *head);
 void	ft_lstadd_front(Node **stack, Node *new);
@@ -39,6 +41,7 @@ void	ft_lstadd_back(Node **stack, Node *new);
 void	printList(Node *head);
 int		ft_lstsize(Node *head);
 
+/* OTHER FUNCTION */
 void	ft_error(char *msg);
 void	ft_check_args(int argc, char **argv);
 int		is_sorted(Node **stack);
@@ -46,35 +49,36 @@ int		get_distance(Node **stack, int index);
 void	make_top(Node **stack, int distance);
 void	free_stack(Node **stack);
 void	ft_free(char **str);
-void	sort4_2(Node **liste_a, Node **liste_b);
+void	initstack(Node **stack, int argc, char **argv);
 
-// RADIXX
-void	radix_sort(Node **liste_a, Node **liste_b);
-void	simple_sort(Node **liste_a, Node **liste_b);
+/* RADIX */
+void	radix_sort(Node **stack_a, Node **stack_b);
+void	simple_sort(Node **stack_a, Node **stack_b);
 void	index_stack(Node **stack);
-void	sort_5(Node **liste_a, Node **liste_b);
-int		view_sort(Node **liste_a);
-//static int	get_min(Node **liste_a, int val);
-//static int	get_max(Node **liste_a, int val);
-//
-//static int	ft_count_words(char const *str, char c);
-//static char	*ft_putword(char *word, char const *s, int i, int word_len);
-//static char	**ft_split_words(char const *s, char c, char **s2, int num_words);
+
+/* ARCHITECTURE MOUV */
 int		swap(Node **stack);
 int		push(Node **stack_to, Node **stack_from);
 int		rotate(Node **stack);
 int		reverseRotate(Node **stack);
 
-int		sa(Node **liste_a);
-int		sb(Node **liste_b);
-int		ss(Node **liste_a, Node **liste_b);
-int		pa(Node **liste_a, Node **liste_b);
-int		pb(Node **liste_b, Node **liste_a);
-int		ra(Node **liste_a);
-int		rb(Node **liste_b);
-int		rr(Node **liste_a, Node **liste_b);
-int		rra(Node **liste_a);
-int		rrb(Node **liste_b);
-int		rrr(Node **liste_a, Node **liste_b);
+/* MOUVEMENT */
+int		sa(Node **stack_a);
+int		sb(Node **stack_b);
+int		ss(Node **stack_a, Node **stack_b);
+int		pa(Node **stack_a, Node **stack_b);
+int		pb(Node **stack_b, Node **stack_a);
+int		ra(Node **stack_a);
+int		rb(Node **stack_b);
+int		rr(Node **stack_a, Node **stack_b);
+int		rra(Node **stack_a);
+int		rrb(Node **stack_b);
+int		rrr(Node **stack_a, Node **stack_b);
+
+/* SORT */
+int		view_sort(Node **stack_a);
+void	sort3(Node **stack_a);
+void	sort4(Node **stack_a, Node **stack_b);
+void	sort_5(Node **stack_a, Node **stack_b);
 
 #endif

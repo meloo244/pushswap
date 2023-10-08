@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:17:36 by shovsepy          #+#    #+#             */
-/*   Updated: 2021/06/30 17:40:27 by shovsepy         ###   ########.fr       */
+/*   Updated: 2023/10/08 21:15:13 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *str1,
 						const char *str2, size_t lestrlen);
 long				ft_atoi(const char *str);
-int					get_next_line(const int fd, char **line);
 
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
