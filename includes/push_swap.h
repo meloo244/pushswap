@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:21:46 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/09 11:20:37 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/10 21:20:25 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,13 @@ Node	*ft_lstnew(int content);
 Node	*ft_lstlast(Node *head);
 void	ft_lstadd_front(Node **stack, Node *new);
 void	ft_lstadd_back(Node **stack, Node *new);
-void	printList(Node *head);
-void	ft_printlist(Node **stack_a);
+void	printlist(Node *head);
 int		ft_lstsize(Node *head);
 
 /* OTHER FUNCTION */
 void	ft_error(char *msg);
 void	ft_check_args(int argc, char **argv);
 int		is_sorted(Node **stack);
-int		get_distance(Node **stack, int index);
-void	make_top(Node **stack, int distance);
 void	free_stack(Node **stack);
 void	ft_free(char **str);
 void	initstack(Node **stack, int argc, char **argv);

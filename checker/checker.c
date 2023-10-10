@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:01:07 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/09 11:23:13 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/10 20:36:48 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ int	main(int argc, char **argv)
 	*stack_b = NULL;
 	ft_check_args(argc, argv);
 	initstack(stack_a, argc, argv);
-	ft_printlist(stack_a);
-	checker((stack_a), (stack_b));
+	checker((stack_a),(stack_b));
 	return (0);
 }

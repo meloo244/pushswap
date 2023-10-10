@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:43:22 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/08 19:21:28 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/10 21:19:00 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,44 +41,6 @@ int	is_sorted(Node **stack)
 		head = head->next;
 	}
 	return (1);
-}
-
-int	get_distance(Node **stack, int index)
-{
-	Node	*head;
-	int		distance;
-
-	distance = 0;
-	head = *stack;
-	while (head)
-	{
-		if (head->index == index)
-			break ;
-		distance++;
-		head = head->next;
-	}
-	return (distance);
-}
-
-void	make_top(Node **stack, int distance)
-{
-	Node	*head;
-	int		tmp;
-
-	if (distance == 0)
-		return ;
-	head = *stack;
-	tmp = ft_lstsize(head) - distance;
-	if (distance <= (ft_lstsize(head) / 2))
-	{
-		while (distance-- > 0)
-			ra(stack);
-	}
-	else
-	{
-		while (tmp-- > 0)
-			rra(stack);
-	}
 }
 
 void	free_stack(Node **stack)
