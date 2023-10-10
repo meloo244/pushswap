@@ -6,15 +6,15 @@
 #    By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/08 19:16:30 by mmarie            #+#    #+#              #
-#    Updated: 2023/10/09 11:38:04 by mmarie           ###   ########.fr        #
+#    Updated: 2023/10/11 00:38:59 by mmarie           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CHECKER = check
 
-SRCS =  $(wildcard src/*.c utils/*.c)
-CHECK_SRCS = $(wildcard utils/*.c gnl/*.c) src/mouvement.c checker/checker.c src/other.c src/sort.c
+SRCS =  $(wildcard src/*.c utils/*.c mouvement/*.c)
+CHECK_SRCS = $(wildcard utils/*.c gnl/*.c mouvement/*.c) checker/checker.c src/other.c src/sort.c
 
 OBJS = ${SRCS:.c=.o}
 CHECK_OBJS = ${CHECK_SRCS:.c=.o}

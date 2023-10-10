@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mouvement.c                                        :+:      :+:    :+:   */
+/*   mouvement1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 19:40:06 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/08 21:11:28 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 00:47:05 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-// Swaps first two elements of a stack | sa and sb
+#include "../includes/push_swap.h"
 
 int	swap(Node **stack)
 {
@@ -86,111 +84,5 @@ int	push(Node **stack_to, Node **stack_from)
 		tmp->next = head_to;
 		*stack_to = tmp;
 	}
-	return (0);
-}
-
-int	pa(Node **stack_a, Node **stack_b)
-{
-	if (push(stack_a, stack_b) == -1)
-		return (-1);
-	ft_putendl_fd("pa", 1);
-	return (0);
-}
-
-int	pb(Node **stack_a, Node **stack_b)
-{
-	if (push(stack_b, stack_a) == -1)
-		return (-1);
-	ft_putendl_fd("pb", 1);
-	return (0);
-}
-
-int	rotate(Node **stack)
-{
-	Node	*head;
-	Node	*tail;
-
-	if (ft_lstsize(*stack) < 2)
-		return (-1);
-	head = *stack;
-	tail = ft_lstlast(head);
-	*stack = head->next;
-	head->next = NULL;
-	tail->next = head;
-	return (0);
-}
-
-int	ra(Node **stack_a)
-{
-	if (rotate(stack_a) == -1)
-		return (-1);
-	ft_putendl_fd("ra", 1);
-	return (0);
-}
-
-int	rb(Node **stack_b)
-{
-	if (rotate(stack_b) == -1)
-		return (-1);
-	ft_putendl_fd("rb", 1);
-	return (0);
-}
-
-int	rr(Node **stack_a, Node **stack_b)
-{
-	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
-		return (-1);
-	rotate(stack_a);
-	rotate(stack_b);
-	ft_putendl_fd("rr", 1);
-	return (0);
-}
-
-int	reverseRotate(Node **stack)
-{
-	Node	*head;
-	Node	*tail;
-
-	if (ft_lstsize(*stack) < 2)
-		return (-1);
-	head = *stack;
-	tail = ft_lstlast(head);
-	while (head)
-	{
-		if (head->next->next == NULL)
-		{
-			 head->next = NULL;
-			 break ;
-		}
-		head = head->next;
-	}
-	tail->next = *stack;
-	*stack = tail;
-	return (0);
-}
-
-int	rra(Node **stack_a)
-{
-	if (reverseRotate(stack_a) == -1)
-		return (-1);
-	ft_putendl_fd("rra", 1);
-	return (0);
-}
-
-int	rrb(Node **stack_b)
-{
-	if (reverseRotate(stack_b) == -1)
-		return (-1);
-	ft_putendl_fd("rrb", 1);
-	return (0);
-}
-
-int	rrr(Node **stack_a, Node **stack_b)
-{
-	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
-		return (-1);
-	reverseRotate(stack_a);
-	reverseRotate(stack_b);
-	ft_putendl_fd("rrr", 1);
 	return (0);
 }

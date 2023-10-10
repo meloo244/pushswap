@@ -6,12 +6,12 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:01:07 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/10 20:36:48 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 00:48:02 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../gnl/get_next_line.h"
-# include "../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 static void	do_move2(Node **stack_a, Node **stack_b, char *line)
 {
@@ -38,13 +38,13 @@ static void	do_move2(Node **stack_a, Node **stack_b, char *line)
 static void	do_move(Node **stack_a, Node **stack_b, char *line)
 {
 	if (ft_strncmp(line, "rra\n", 4) == 0)
-		reverseRotate(stack_a);
+		reverserotate(stack_a);
 	else if (ft_strncmp(line, "rrb\n", 4) == 0)
-		reverseRotate(stack_b);
+		reverserotate(stack_b);
 	else if (ft_strncmp(line, "rrr\n", 4) == 0)
 	{
-		reverseRotate(stack_a);
-		reverseRotate(stack_b);
+		reverserotate(stack_a);
+		reverserotate(stack_b);
 	}
 	else if (ft_strncmp(line, "ra\n", 3) == 0)
 		rotate(stack_a);
@@ -90,6 +90,6 @@ int	main(int argc, char **argv)
 	*stack_b = NULL;
 	ft_check_args(argc, argv);
 	initstack(stack_a, argc, argv);
-	checker((stack_a),(stack_b));
+	checker((stack_a), (stack_b));
 	return (0);
 }

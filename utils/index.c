@@ -25,7 +25,8 @@ static Node	*get_next_min(Node **stack)
 	{
 		while (head)
 		{
-			if ((head->index == -1) && (!has_min || head->content < min->content))
+			if ((head->index == -1) && (!has_min
+					|| head->content < min->content))
 			{
 				min = head;
 				has_min = 1;

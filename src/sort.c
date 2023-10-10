@@ -6,11 +6,11 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:13:04 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/10 21:21:23 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 00:35:32 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 void	sort3(Node **stack_a)
 {
@@ -23,10 +23,10 @@ void	sort3(Node **stack_a)
 	}
 }
 
-void	sort4(Node **stack_a, Node** stack_b)
+void	sort4(Node **stack_a, Node **stack_b)
 {
 	if (view_sort(stack_a) == 1)
-		return;
+		return ;
 	if ((*stack_a)->index == 1)
 		pb(stack_a, stack_b);
 	else if ((*stack_a)->next->index == 1)
@@ -54,9 +54,9 @@ void	sort5(Node **stack_a, Node **stack_b)
 	int	nbv;
 
 	nbv = 0;
-	while(nbv != 2)
+	while (nbv != 2)
 	{
-		if((*stack_a)->index == 1 || (*stack_a)->index == 2)
+		if ((*stack_a)->index == 1 || (*stack_a)->index == 2)
 		{
 			pb(stack_a, stack_b);
 			nbv++;
@@ -64,7 +64,7 @@ void	sort5(Node **stack_a, Node **stack_b)
 		(*stack_a) = (*stack_a)->next;
 	}
 	sort3(stack_a);
-	if((*stack_b)->content < (*stack_b)->next->content)
+	if ((*stack_b)->content < (*stack_b)->next->content)
 		swap(stack_b);
 	push(stack_b, stack_a);
 	push(stack_b, stack_a);
@@ -88,11 +88,11 @@ void	simple_sort(Node **stack_a, Node **stack_b)
 
 int	view_sort(Node **stack_a)
 {
-	while((*stack_a)->next != NULL)
+	while ((*stack_a)->next != NULL)
 	{
-		if((*stack_a)->content > (*stack_a)->next->content)
-			return(0);
+		if ((*stack_a)->content > (*stack_a)->next->content)
+			return (0);
 		(*stack_a) = (*stack_a)->next;
 	}
-	return(1);
+	return (1);
 }

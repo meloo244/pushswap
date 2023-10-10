@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/02 19:17:36 by shovsepy          #+#    #+#             */
+/*   Created: 2021/02/02 19:17:36 by           #+#    #+#             */
 /*   Updated: 2023/10/08 21:15:13 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -18,8 +18,8 @@
 # include <stdio.h>
 # include <fcntl.h>
 
-# define BUFF_SIZE	(1)
-# define MAX_FD (1025)
+# define BUFF_SIZE 1
+# define MAX_FD 1025
 
 void				*ft_bzero(void *s, size_t len);
 void				ft_putchar_fd(char c, int fd);

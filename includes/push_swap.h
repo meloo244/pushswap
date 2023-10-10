@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:21:46 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/10 21:20:25 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 00:48:02 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	index_stack(Node **stack);
 int		swap(Node **stack);
 int		push(Node **stack_to, Node **stack_from);
 int		rotate(Node **stack);
-int		reverseRotate(Node **stack);
+int		reverserotate(Node **stack);
 
 /* MOUVEMENT */
 int		sa(Node **stack_a);
