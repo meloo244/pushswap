@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:21:46 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/08 22:52:32 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/09 11:20:37 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ Node	*ft_lstlast(Node *head);
 void	ft_lstadd_front(Node **stack, Node *new);
 void	ft_lstadd_back(Node **stack, Node *new);
 void	printList(Node *head);
+void	ft_printlist(Node **stack_a);
 int		ft_lstsize(Node *head);
 
 /* OTHER FUNCTION */
