@@ -6,25 +6,11 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:13:04 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/10 20:31:52 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/10 21:21:23 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../includes/push_swap.h"
-
-void	ft_printlist(Node **stack_a)
-{
-	Node **tmp;
-
-	tmp = stack_a;
-	while (*tmp != NULL)
-	{
-		ft_putnbr_fd((*tmp)->content, 1);
-		ft_putstr_fd("\n", 1);
-		*tmp = (*tmp)->next;
-	}
-	ft_putstr_fd("\n", 1);
-}
 
 void	sort3(Node **stack_a)
 {
@@ -83,55 +69,6 @@ void	sort5(Node **stack_a, Node **stack_b)
 	push(stack_b, stack_a);
 	push(stack_b, stack_a);
 }
-/*
-int	view_sort(Node **stack_a)
-{
-	int	i;
-
-	i = 1;
-	while((*stack_a) != NULL)
-	{
-		if((*stack_a)->index == i) // et = 1
-			*stack_a = (*stack_a)->next;
-		else
-			return(0);
-		i++;
-	}
-	return(1);
-}*/
-
-/*
-static int	get_min(Node **stack_a, int val)
-{
-	Node	*head;
-	int		min;
-
-	head = *stack_a;
-	min = head->index;
-	while (head->next)
-	{
-		head = head->next;
-		if ((head->index < min) && head->index != val)
-			min = head->index;
-	}
-	return (min);
-}*/
-
-/*static int	get_max(Node **stack_a, int val)
-{
-	Node	*head;
-	int		max;
-
-	head = stack_a;
-	max = head->index;
-	while (head->next)
-	{
-		head = head->next;
-		if ((head->index > max) && head->index != val)
-		max = head->index;
-	}
-	return (max);
-}*/
 
 void	simple_sort(Node **stack_a, Node **stack_b)
 {
