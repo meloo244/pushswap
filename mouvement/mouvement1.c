@@ -6,16 +6,16 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 19:40:06 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 00:47:05 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	swap(Node **stack)
+int	swap(t_node **stack)
 {
-	Node	*head;
-	Node	*next;
+	t_node	*head;
+	t_node	*next;
 	int		tmp_val;
 	int		tmp_index;
 
@@ -34,7 +34,7 @@ int	swap(Node **stack)
 	return (0);
 }
 
-int	sa(Node **stack_a)
+int	sa(t_node **stack_a)
 {
 	if (swap(stack_a) == -1)
 		return (-1);
@@ -42,7 +42,7 @@ int	sa(Node **stack_a)
 	return (0);
 }
 
-int	sb(Node **stack_b)
+int	sb(t_node **stack_b)
 {
 	if (swap(stack_b) == -1)
 		return (-1);
@@ -50,7 +50,7 @@ int	sb(Node **stack_b)
 	return (0);
 }
 
-int	ss(Node **stack_a, Node **stack_b)
+int	ss(t_node **stack_a, t_node **stack_b)
 {
 	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
 		return (-1);
@@ -60,11 +60,11 @@ int	ss(Node **stack_a, Node **stack_b)
 	return (0);
 }
 
-int	push(Node **stack_to, Node **stack_from)
+int	push(t_node **stack_to, t_node **stack_from)
 {
-	Node	*tmp;
-	Node	*head_to;
-	Node	*head_from;
+	t_node	*tmp;
+	t_node	*head_to;
+	t_node	*head_from;
 
 	if (ft_lstsize(*stack_from) == 0)
 		return (-1);

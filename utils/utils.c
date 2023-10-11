@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:43:22 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/10 21:19:00 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	ft_free(char **str)
 		free(str[i--]);
 }
 
-int	is_sorted(Node **stack)
+int	is_sorted(t_node **stack)
 {
-	Node	*head;
+	t_node	*head;
 
 	head = *stack;
 	while (head && head->next)
@@ -43,10 +43,10 @@ int	is_sorted(Node **stack)
 	return (1);
 }
 
-void	free_stack(Node **stack)
+void	free_stack(t_node **stack)
 {
-	Node	*head;
-	Node	*tmp;
+	t_node	*head;
+	t_node	*tmp;
 
 	head = *stack;
 	while (head)

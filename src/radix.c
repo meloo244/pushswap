@@ -6,15 +6,15 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 19:12:14 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/08 21:11:28 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix_sort(Node **stack_a, Node **stack_b)
+void	radix_sort(t_node **stack_a, t_node **stack_b)
 {
-	Node	*head_a;
+	t_node	*head_a;
 	int		i;
 	int		j;
 	int		size;

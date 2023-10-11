@@ -6,13 +6,13 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 00:37:26 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 00:48:02 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	rr(Node **stack_a, Node **stack_b)
+int	rr(t_node **stack_a, t_node **stack_b)
 {
 	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
 		return (-1);
@@ -22,10 +22,10 @@ int	rr(Node **stack_a, Node **stack_b)
 	return (0);
 }
 
-int	reverserotate(Node **stack)
+int	reverserotate(t_node **stack)
 {
-	Node	*head;
-	Node	*tail;
+	t_node	*head;
+	t_node	*tail;
 
 	if (ft_lstsize(*stack) < 2)
 		return (-1);
@@ -45,7 +45,7 @@ int	reverserotate(Node **stack)
 	return (0);
 }
 
-int	rra(Node **stack_a)
+int	rra(t_node **stack_a)
 {
 	if (reverserotate(stack_a) == -1)
 		return (-1);
@@ -53,7 +53,7 @@ int	rra(Node **stack_a)
 	return (0);
 }
 
-int	rrb(Node **stack_b)
+int	rrb(t_node **stack_b)
 {
 	if (reverserotate(stack_b) == -1)
 		return (-1);
@@ -61,7 +61,7 @@ int	rrb(Node **stack_b)
 	return (0);
 }
 
-int	rrr(Node **stack_a, Node **stack_b)
+int	rrr(t_node **stack_a, t_node **stack_b)
 {
 	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
 		return (-1);

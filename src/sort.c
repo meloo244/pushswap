@@ -6,13 +6,13 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:13:04 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 00:35:32 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort3(Node **stack_a)
+void	sort3(t_node **stack_a)
 {
 	while (view_sort(stack_a) == 0)
 	{
@@ -23,7 +23,7 @@ void	sort3(Node **stack_a)
 	}
 }
 
-void	sort4(Node **stack_a, Node **stack_b)
+void	sort4(t_node **stack_a, t_node **stack_b)
 {
 	if (view_sort(stack_a) == 1)
 		return ;
@@ -49,7 +49,7 @@ void	sort4(Node **stack_a, Node **stack_b)
 	pa(stack_b, stack_a);
 }
 
-void	sort5(Node **stack_a, Node **stack_b)
+void	sort5(t_node **stack_a, t_node **stack_b)
 {
 	int	nbv;
 
@@ -70,7 +70,7 @@ void	sort5(Node **stack_a, Node **stack_b)
 	push(stack_b, stack_a);
 }
 
-void	simple_sort(Node **stack_a, Node **stack_b)
+void	simple_sort(t_node **stack_a, t_node **stack_b)
 {
 	int	size;
 
@@ -86,7 +86,7 @@ void	simple_sort(Node **stack_a, Node **stack_b)
 		sort4(stack_a, stack_b);
 }
 
-int	view_sort(Node **stack_a)
+int	view_sort(t_node **stack_a)
 {
 	while ((*stack_a)->next != NULL)
 	{

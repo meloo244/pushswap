@@ -6,15 +6,15 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 23:03:25 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/10 20:31:26 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	initstack(Node **stack, int argc, char **argv)
+void	initstack(t_node **stack, int argc, char **argv)
 {
-	Node	*new;
+	t_node	*new;
 	char	**args;
 	int		i;
 

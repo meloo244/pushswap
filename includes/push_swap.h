@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:21:46 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 00:48:02 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,52 +31,52 @@ typedef struct s_list
 	int				content;
 	int				index;
 	struct s_list	*next;
-}				Node;
+}				t_node;
 
 /* FUNCTION LISTE CHAINE */
-Node	*ft_lstnew(int content);
-Node	*ft_lstlast(Node *head);
-void	ft_lstadd_front(Node **stack, Node *new);
-void	ft_lstadd_back(Node **stack, Node *new);
-void	printlist(Node *head);
-int		ft_lstsize(Node *head);
+t_node	*ft_lstnew(int content);
+t_node	*ft_lstlast(t_node *head);
+void	ft_lstadd_front(t_node **stack, t_node *new);
+void	ft_lstadd_back(t_node **stack, t_node *new);
+void	printlist(t_node *head);
+int		ft_lstsize(t_node *head);
 
 /* OTHER FUNCTION */
 void	ft_error(char *msg);
 void	ft_check_args(int argc, char **argv);
-int		is_sorted(Node **stack);
-void	free_stack(Node **stack);
+int		is_sorted(t_node **stack);
+void	free_stack(t_node **stack);
 void	ft_free(char **str);
-void	initstack(Node **stack, int argc, char **argv);
+void	initstack(t_node **stack, int argc, char **argv);
 
 /* RADIX */
-void	radix_sort(Node **stack_a, Node **stack_b);
-void	simple_sort(Node **stack_a, Node **stack_b);
-void	index_stack(Node **stack);
+void	radix_sort(t_node **stack_a, t_node **stack_b);
+void	simple_sort(t_node **stack_a, t_node **stack_b);
+void	index_stack(t_node **stack);
 
 /* ARCHITECTURE MOUV */
-int		swap(Node **stack);
-int		push(Node **stack_to, Node **stack_from);
-int		rotate(Node **stack);
-int		reverserotate(Node **stack);
+int		swap(t_node **stack);
+int		push(t_node **stack_to, t_node **stack_from);
+int		rotate(t_node **stack);
+int		reverserotate(t_node **stack);
 
 /* MOUVEMENT */
-int		sa(Node **stack_a);
-int		sb(Node **stack_b);
-int		ss(Node **stack_a, Node **stack_b);
-int		pa(Node **stack_a, Node **stack_b);
-int		pb(Node **stack_b, Node **stack_a);
-int		ra(Node **stack_a);
-int		rb(Node **stack_b);
-int		rr(Node **stack_a, Node **stack_b);
-int		rra(Node **stack_a);
-int		rrb(Node **stack_b);
-int		rrr(Node **stack_a, Node **stack_b);
+int		sa(t_node **stack_a);
+int		sb(t_node **stack_b);
+int		ss(t_node **stack_a, t_node **stack_b);
+int		pa(t_node **stack_a, t_node **stack_b);
+int		pb(t_node **stack_b, t_node **stack_a);
+int		ra(t_node **stack_a);
+int		rb(t_node **stack_b);
+int		rr(t_node **stack_a, t_node **stack_b);
+int		rra(t_node **stack_a);
+int		rrb(t_node **stack_b);
+int		rrr(t_node **stack_a, t_node **stack_b);
 
 /* SORT */
-int		view_sort(Node **stack_a);
-void	sort3(Node **stack_a);
-void	sort4(Node **stack_a, Node **stack_b);
-void	sort_5(Node **stack_a, Node **stack_b);
+int		view_sort(t_node **stack_a);
+void	sort3(t_node **stack_a);
+void	sort4(t_node **stack_a, t_node **stack_b);
+void	sort_5(t_node **stack_a, t_node **stack_b);
 
 #endif

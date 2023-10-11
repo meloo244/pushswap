@@ -6,13 +6,13 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 00:36:57 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 00:47:09 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	pa(Node **stack_a, Node **stack_b)
+int	pa(t_node **stack_a, t_node **stack_b)
 {
 	if (push(stack_a, stack_b) == -1)
 		return (-1);
@@ -20,7 +20,7 @@ int	pa(Node **stack_a, Node **stack_b)
 	return (0);
 }
 
-int	pb(Node **stack_a, Node **stack_b)
+int	pb(t_node **stack_a, t_node **stack_b)
 {
 	if (push(stack_b, stack_a) == -1)
 		return (-1);
@@ -28,10 +28,10 @@ int	pb(Node **stack_a, Node **stack_b)
 	return (0);
 }
 
-int	rotate(Node **stack)
+int	rotate(t_node **stack)
 {
-	Node	*head;
-	Node	*tail;
+	t_node	*head;
+	t_node	*tail;
 
 	if (ft_lstsize(*stack) < 2)
 		return (-1);
@@ -43,7 +43,7 @@ int	rotate(Node **stack)
 	return (0);
 }
 
-int	ra(Node **stack_a)
+int	ra(t_node **stack_a)
 {
 	if (rotate(stack_a) == -1)
 		return (-1);
@@ -51,7 +51,7 @@ int	ra(Node **stack_a)
 	return (0);
 }
 
-int	rb(Node **stack_b)
+int	rb(t_node **stack_b)
 {
 	if (rotate(stack_b) == -1)
 		return (-1);

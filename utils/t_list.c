@@ -6,17 +6,17 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:40:28 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 00:40:27 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-Node	*ft_lstnew(int content)
+t_node	*ft_lstnew(int content)
 {
-	Node	*new;
+	t_node	*new;
 
-	new = (Node *) malloc(sizeof(*new));
+	new = (t_node *) malloc(sizeof(*new));
 	if (!new)
 		return (NULL);
 	new->content = content;
@@ -25,15 +25,15 @@ Node	*ft_lstnew(int content)
 	return (new);
 }
 
-void	ft_lstadd_front(Node **stack, Node *new)
+void	ft_lstadd_front(t_node **stack, t_node *new)
 {
 	new->next = *stack;
 	*stack = new;
 }
 
-Node	*ft_lstlast(Node *head)
+t_node	*ft_lstlast(t_node *head)
 {
-	Node	*tmp;
+	t_node	*tmp;
 
 	tmp = head;
 	while (tmp->next)
@@ -45,9 +45,9 @@ Node	*ft_lstlast(Node *head)
 	return (tmp);
 }
 
-void	ft_lstadd_back(Node **stack, Node *new)
+void	ft_lstadd_back(t_node **stack, t_node *new)
 {
-	Node	*n;
+	t_node	*n;
 
 	if (*stack)
 	{
@@ -62,10 +62,10 @@ void	ft_lstadd_back(Node **stack, Node *new)
 	}
 }
 
-int	ft_lstsize(Node *head)
+int	ft_lstsize(t_node *head)
 {
 	size_t	i;
-	Node	*tmp;
+	t_node	*tmp;
 
 	tmp = head;
 	i = 0;

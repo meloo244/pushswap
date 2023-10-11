@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-static Node	*get_next_min(Node **stack)
+static t_node	*get_next_min(t_node **stack)
 {
-	Node	*head;
-	Node	*min;
+	t_node	*head;
+	t_node	*min;
 	int		has_min;
 
 	min = NULL;
@@ -37,9 +37,9 @@ static Node	*get_next_min(Node **stack)
 	return (min);
 }
 
-void	index_stack(Node **stack)
+void	index_stack(t_node **stack)
 {
-	Node	*head;
+	t_node	*head;
 	int		index;
 
 	index = 1;

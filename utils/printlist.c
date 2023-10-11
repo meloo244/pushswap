@@ -6,15 +6,15 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 00:40:40 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 00:40:50 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	printlist(Node *head)
+void	printlist(t_node *head)
 {
-	Node	*tmp;
+	t_node	*tmp;
 
 	tmp = head;
 	while (tmp != NULL)
