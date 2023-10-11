@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 20:12:43 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 11:05:20 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 11:06:12 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static int	ft_contains(int num, char **argv, int i)
 {
+	i++;
 	while (argv[i])
 	{
 		if (ft_atoi(argv[i]) == num)
