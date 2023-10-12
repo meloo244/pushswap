@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:01:07 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/12 13:20:41 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/12 15:00:40 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,16 @@
 static void	do_move2(t_node **stack_a, t_node **stack_b, char *line)
 {
 	if (ft_strncmp(line, "pa\n", 3) == 0)
-		push(stack_b, stack_a);
+		pa(stack_a, stack_b);
 	else if (ft_strncmp(line, "pb\n", 3) == 0)
-		push(stack_a, stack_b);
+		pb(stack_b, stack_a);
 	else if (ft_strncmp(line, "sa\n", 3) == 0)
-		swap(stack_a);
+		sa(stack_a);
 	else if (ft_strncmp(line, "sb\n", 3) == 0)
-		swap(stack_b);
+		sb(stack_b);
 	else if (ft_strncmp(line, "ss\n", 3) == 0)
 	{
-		swap(stack_a);
-		swap(stack_b);
+		ss(stack_a, stack_b);
 	}
 	else
 	{
@@ -38,22 +37,20 @@ static void	do_move2(t_node **stack_a, t_node **stack_b, char *line)
 static void	do_move(t_node **stack_a, t_node **stack_b, char *line)
 {
 	if (ft_strncmp(line, "rra\n", 4) == 0)
-		reverserotate(stack_a);
+		rra(stack_a);
 	else if (ft_strncmp(line, "rrb\n", 4) == 0)
-		reverserotate(stack_b);
+		rrb(stack_b);
 	else if (ft_strncmp(line, "rrr\n", 4) == 0)
 	{
-		reverserotate(stack_a);
-		reverserotate(stack_b);
+		rrr(stack_a, stack_b);
 	}
 	else if (ft_strncmp(line, "ra\n", 3) == 0)
-		rotate(stack_a);
+		ra(stack_a);
 	else if (ft_strncmp(line, "rb\n", 3) == 0)
-		rotate(stack_a);
+		rb(stack_b);
 	else if (ft_strncmp(line, "rr\n", 3) == 0)
 	{
-		rotate(stack_b);
-		rotate(stack_a);
+		rr(stack_a, stack_a);
 	}
 	else
 		do_move2(stack_a, stack_b, line);
