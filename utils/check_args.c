@@ -6,11 +6,11 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 20:12:43 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 11:06:12 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/11 11:21:50 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static int	ft_contains(int num, char **argv, int i)
 {
@@ -58,11 +58,11 @@ void	ft_check_args(int argc, char **argv)
 	{
 		tmp = ft_atoi(args[i]);
 		if (!ft_isnum(args[i]))
-			ft_error("Error");
+			ft_error("Error : caractere non numérique");
 		if (ft_contains(tmp, args, i))
-			ft_error("Error");
+			ft_error("Error : dup");
 		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_error("Error");
+			ft_error("Error : int max");
 		i++;
 	}
 	if (argc == 2)

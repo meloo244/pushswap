@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:21:46 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/12 13:19:31 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int		rrb(t_node **stack_b);
 int		rrr(t_node **stack_a, t_node **stack_b);
 
 /* SORT */
-int		view_sort(t_node **stack_a);
+int		view_sort(t_node *stack_a);
 void	sort3(t_node **stack_a);
 void	sort4(t_node **stack_a, t_node **stack_b);
 void	sort_5(t_node **stack_a, t_node **stack_b);

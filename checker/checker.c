@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:01:07 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/12 13:20:41 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	checker(t_node **stack_a, t_node **stack_b)
 		do_move(stack_a, stack_b, line);
 		free(line);
 	}
-	if (view_sort(stack_a) == 0)
+	if (view_sort(*stack_a) == 0)
 		write(1, "KO\n", 3);
 	else
 		write(1, "OK\n", 3);

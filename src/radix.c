@@ -6,11 +6,11 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 19:12:14 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/11 07:47:46 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/12 13:21:06 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	radix_sort(t_node **stack_a, t_node **stack_b)
 {
@@ -22,10 +22,10 @@ void	radix_sort(t_node **stack_a, t_node **stack_b)
 	i = 0;
 	head_a = *stack_a;
 	size = ft_lstsize(head_a);
-	while (view_sort(stack_a) == 0)
+	while (view_sort(*stack_a) == 0)
 	{
 		j = 0;
-		while (j++ < size && view_sort(stack_a) == 0)
+		while (j++ < size && view_sort(*stack_a) == 0)
 		{
 			head_a = *stack_a;
 			if (((head_a->index >> i) & 1) == 1)
