@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:13:04 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/12 13:21:34 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/13 21:21:20 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,9 @@ void	sort4(t_node **stack_a, t_node **stack_b)
 	}
 	else if ((*stack_a)->next->next->index == 1)
 	{
-		// 999 555 111 222
-		// 555 111 222 999
-		// 111 222 999 555
 		ra(stack_a);
 		ra(stack_a);
-		pb(stack_a, stack_b);  // 111 lst b
+		pb(stack_a, stack_b);
 	}
 	else if ((*stack_a)->next->next->next->index == 1)
 	{
@@ -91,7 +88,6 @@ void	simple_sort(t_node **stack_a, t_node **stack_b)
 
 int	view_sort(t_node *stack_a)
 {
-
 	while ((stack_a)->next != NULL)
 	{
 		if ((stack_a)->content > (stack_a)->next->content)

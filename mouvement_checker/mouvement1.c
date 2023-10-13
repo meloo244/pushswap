@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 19:40:06 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/13 02:05:08 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/13 21:19:39 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	sa(t_node **stack_a)
 {
 	if (swap(stack_a) == -1)
 		return (-1);
-
 	return (0);
 }
 
