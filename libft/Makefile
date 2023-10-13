@@ -1,42 +1,51 @@
-# ************************************************************************** #
-#                                                                            #
-#                                                        :::      ::::::::   #
-#   Makefile                                           :+:      :+:    :+:   #
-#                                                    +:+ +:+         +:+     #
-#   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        #
-#                                                +#+#+#+#+#+   +#+           #
-#   Created: 2021/07/09 18:33:22 by shovsepy          #+#    #+#             #
-#   Updated: 2021/07/09 18:33:23 by shovsepy         ###   ########.fr       #
-#                                                                            #
-# ************************************************************************** #
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/01 16:04:36 by mmarie            #+#    #+#              #
+#    Updated: 2023/10/13 21:42:09 by mmarie           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME		= libft.a
+NAME = libft.a
+GCC = cc
+FLAGS = -Wall -Wextra -Werror
+FILES =	$(wildcard *.c)
 
-SRCS		= $(shell find "." -name "*.c")
+OBJS = $(FILES:.c=.o)
 
-OBJS		= ${SRCS:.c=.o}
-BONUS_OBJS 	= ${BONUSES:.c=.o}
+BONUS =	ft_lstnew.c\
+	ft_lstadd_front.c\
+	ft_lstsize.c\
+	ft_lstlast.c\
+	ft_lstadd_back.c\
+	ft_lstdelone.c\
+	ft_lstclear.c\
+	ft_lstiter.c\
+	ft_lstmap.c
 
-CC		= gcc
-RM		= rm -rf
-CFLAGS		= -Wall -Wextra -Werror
-AR		= ar csr
+BONUS_OBJS = $(BONUS:.c=.o)
 
-.c.o :
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-all : ${NAME}
+.c.o:
+	$(GCC) $(FLAGS) -c $< -o $(<:.c=.o) -I.
 
-$(NAME) : ${OBJS}
-	@${AR} libft.a ${OBJS}
+all: $(NAME)
 
-clean :
-	@${RM} ${OBJS} ${BONUS_OBJS}
+clean:
+	rm -f $(OBJS) $(BONUS_OBJS)
 
-fclean : clean
-	@${RM} ${NAME}
+fclean: clean
+	rm -f $(NAME)
 
-re : fclean all
+re: fclean all
 
-.PHONY: all clean fclean re .c.o
+bonus:	$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
+.PHONY:			all clean fclean re bonus
