@@ -6,7 +6,7 @@
 /*   By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 20:01:07 by mmarie            #+#    #+#             */
-/*   Updated: 2023/10/12 15:00:40 by mmarie           ###   ########.fr       */
+/*   Updated: 2023/10/13 02:25:34 by mmarie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ static void	do_move2(t_node **stack_a, t_node **stack_b, char *line)
 	if (ft_strncmp(line, "pa\n", 3) == 0)
 		pa(stack_a, stack_b);
 	else if (ft_strncmp(line, "pb\n", 3) == 0)
-		pb(stack_b, stack_a);
+	{
+		pb(stack_a, stack_b);
+	}
 	else if (ft_strncmp(line, "sa\n", 3) == 0)
 		sa(stack_a);
 	else if (ft_strncmp(line, "sb\n", 3) == 0)
@@ -87,6 +89,6 @@ int	main(int argc, char **argv)
 	*stack_b = NULL;
 	ft_check_args(argc, argv);
 	initstack(stack_a, argc, argv);
-	checker((stack_a), (stack_b));
+	checker(stack_a, stack_b);
 	return (0);
 }
