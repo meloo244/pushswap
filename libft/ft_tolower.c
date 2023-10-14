@@ -1,10 +1,21 @@
-
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmarie <mmarie@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/03 10:51:42 by mmarie            #+#    #+#             */
+/*   Updated: 2023/02/16 00:44:29 by mmarie           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	else
-		return (c);
+	if (c >= 65 && c <= 90)
+	{
+		c = c + 32;
+	}
+	return (c);
 }
+// doit transforme les minuscule en masjucule return + 32 ou while ... 

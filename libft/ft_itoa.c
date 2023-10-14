@@ -1,43 +1,62 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel <mel@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/18 22:49:35 by mel               #+#    #+#             */
+/*   Updated: 2023/02/22 15:11:24 by mel              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-static int	ft_dc(int n)
+int	ft_abs(int n)
 {
-	int	i;
-
-	i = 0;
-	if (n < 0 || n == 0)
-		i++;
-	while (n)
+	if (n < 0)
 	{
-		n /= 10;
-		i++;
+		return (-n);
 	}
-	return (i + 1);
+	else
+	{
+		return (n);
+	}
+}
+
+static int	ft_numlen(int n)
+{
+	int	len;
+
+	len = 1;
+	while (n / 10 != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	int				n1;
-	unsigned int	n2;
-	int				i;
-	char			*d;
+	char	*result;
+	int		sign;
+	int		size;
 
-	i = ft_dc(n);
-	n1 = 0;
-	n2 = n;
-	d = malloc(i);
-	d[--i] = '\0';
+	sign = 0;
 	if (n < 0)
+		sign = 1;
+	size = ft_numlen(n);
+	result = (char *)malloc(sizeof(char) * (size + sign + 1));
+	if (!result)
+		return (NULL);
+	result[size + sign] = '\0';
+	while (size-- > 0)
 	{
-		n2 = n * -1;
-		d[n1] = '-';
-		n1++;
+		result[size + sign] = ft_abs(n % 10) + '0';
+		n /= 10;
 	}
-	while (n1 < i--)
-	{
-		d[i] = n2 % 10 + '0';
-		n2 /= 10;
-	}
-	return (d);
+	if (sign == 1)
+		result[0] = '-';
+	return (result);
 }

@@ -1,38 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel <mel@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/19 17:09:00 by mel               #+#    #+#             */
+/*   Updated: 2023/02/20 09:32:36 by mel              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-int	isinset(int c, const char *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	character;
+	int	i;
+	int	b;
 
-	character = (char)c;
-	while (*set)
-	{
-		if (*set++ == character)
-			return (1);
-	}
-	return (0);
-}
-
-char	*ft_strtrim(const char *str, const char *set)
-{
-	char	*new_str;
-	int		start;
-	int		end;
-	int		i;
-
-	start = 0;
-	end = ft_strlen(str);
-	while (str[start] && isinset(str[start], set))
-		start++;
-	while (end > start && isinset(str[end - 1], set))
-		end--;
-	new_str = malloc(end - start + 1);
-	if (!new_str)
-		return (NULL);
 	i = 0;
-	while (start < end)
-		new_str[i++] = str[start++];
-	new_str[i] = '\0';
-	return (new_str);
+	b = ft_strlen(s1) - 1;
+	while (s1[i] && ft_strchr(set, s1[i]))
+	i++;
+	while (b >= i && ft_strchr(set, s1[b]))
+	b--;
+	return (ft_substr(s1, i, b - i + 1));
 }

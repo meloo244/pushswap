@@ -1,23 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel <mel@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/15 22:44:10 by mmarie            #+#    #+#             */
+/*   Updated: 2023/02/20 22:56:10 by mel              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*letter;
-	int		i;
-
-	letter = 0;
-	i = 0;
-	while (str[i])
+	if (s == NULL)
+		return (NULL);
+	while (*s != '\0')
 	{
-		if (str[i] == c)
-		{
-			letter = (char *)(str + i);
-			return (letter);
-		}
-		i++;
+		if (*s == (unsigned char) c)
+			return ((char *)s);
+		s++;
 	}
-	if (str[i] == c)
-		return ((char *)(str + i));
+	if (c == '\0')
+		return ((char *)s);
 	return (NULL);
 }
+// il recherche le caractere passe en parametre si
+// il le trouve il emet un pointeur si il ne le retrouve pas
+// il renvois nul // test 22 22 

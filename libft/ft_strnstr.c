@@ -1,29 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel <mel@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/16 06:27:40 by mmarie            #+#    #+#             */
+/*   Updated: 2023/03/01 17:32:04 by mel              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-char	*ft_strnstr(const char *str,
-	const char *sub_str, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
+	size_t	little_len;
 	size_t	i;
 	size_t	j;
 
+	little_len = ft_strlen(little);
 	i = 0;
-	j = 0;
-	if (!sub_str[j])
-		return ((char *)(str));
-	while (str[i] && sub_str[j] && len)
+	if (little_len == 0)
+		return ((char *)big);
+	while (i < len && big[i] != '\0')
 	{
-		if (str[i] == sub_str[j])
-			j++;
-		else if (j)
+		if (big[i] == little[0])
 		{
-			j = 0;
-			continue ;
+			j = 1;
+			while (j < little_len && i + j < len && big[i + j] == little[j])
+			{
+				j++;
+			}
+			if (j == little_len)
+				return ((char *)(big + i));
 		}
-		i++;
-		len--;
+	i++;
 	}
-	if (!sub_str[j])
-		return ((char *)(str + i - j));
-	return (0);
+	return (NULL);
 }

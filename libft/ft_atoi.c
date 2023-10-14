@@ -1,27 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmarie <mmarie@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/08 17:06:47 by mmarie            #+#    #+#             */
+/*   Updated: 2023/02/16 00:09:21 by mmarie           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "libft.h"
-
-long	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
-	long	i;
-	long	number;
-	int		sign;
+	int	i;
+	int	valeur;
+	int	nb_moins;
 
 	i = 0;
-	number = 0;
-	sign = 1;
-	while (str[i] && (str[i] == 32 || (str[i] >= 9 && str[i] <= 13)))
+	valeur = 0;
+	nb_moins = 1;
+	while (nptr[i] && ((nptr[i] < 14 && nptr[i] > 8) || nptr[i] == 32))
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (str[i] == '-')
-			sign = -1;
+		if (nptr[i] == '-')
+			nb_moins *= -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		number = (number * 10) + (str[i] - '0');
+		valeur = valeur * 10 + nptr[i] - '0';
 		i++;
 	}
-	return (number * sign);
+	valeur *= nb_moins;
+	return (valeur);
 }

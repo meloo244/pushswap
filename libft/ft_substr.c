@@ -1,33 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel <mel@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/17 16:08:19 by mmarie            #+#    #+#             */
+/*   Updated: 2023/02/26 19:36:38 by mel              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_init(void)
-{
-	char	*substr;
-
-	substr = malloc(sizeof(char) * 1);
-	if (!substr)
-		return (NULL);
-	substr[0] = '\0';
-	return (substr);
-}
-
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	unsigned int	s_len;
-	char			*substr;
+	char	*substr;
+	size_t	s_len;
+	size_t	i;
 
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	s_len = ft_strlen(s);
-	if (s_len < start)
-	{
-		substr = ft_init();
-		return (substr);
-	}
+	s_len = 0;
+	while (s[s_len] != '\0')
+	s_len++;
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (s_len - start < len)
+		len = s_len - start;
 	substr = malloc(sizeof(char) * (len + 1));
-	if (!substr)
+	if (substr == NULL)
 		return (NULL);
 	i = 0;
 	while (i < len)

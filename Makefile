@@ -6,7 +6,7 @@
 #    By: mmarie <mmarie@student.42perpignan.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/08 19:16:30 by mmarie            #+#    #+#              #
-#    Updated: 2023/10/13 01:31:58 by mmarie           ###   ########.fr        #
+#    Updated: 2023/10/14 14:14:25 by mmarie           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ ${CHECKER}: ${CHECK_OBJS}
 	@${CC} ${CFLAGS} ${CHECK_OBJS} ./libft/libft.a -o ${CHECKER}
 
 clean:
+	@${MAKE} -C ./libft fclean
 	@${RM} ${OBJS}
 	@${RM} ${CHECK_OBJS}
 
